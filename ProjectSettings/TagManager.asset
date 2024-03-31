@@ -9,6 +9,7 @@ TagManager:
   - WarriorWhite
   - WarriorBrown
   - WarriorBlack
+  - ArcherTowerLevel1
   layers:
   - Default
   - TransparentFX
