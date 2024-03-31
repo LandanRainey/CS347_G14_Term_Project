@@ -10,6 +10,8 @@ TagManager:
   - WarriorBrown
   - WarriorBlack
   - ArcherTowerLevel1
+  - ArcherTowerLevel2
+  - ArcherTowerLevel3
   layers:
   - Default
   - TransparentFX
