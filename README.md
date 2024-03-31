@@ -1,2 +1,2 @@
-# WesternShooterGame
-This is a Unity game for CS347. It is a western style carnival shooter.
+# CS 347 Group 14's Term Project
+Some sort of tower defense-esque game using the Synty asset packs (primarily polygon adventure and polygon knights)
