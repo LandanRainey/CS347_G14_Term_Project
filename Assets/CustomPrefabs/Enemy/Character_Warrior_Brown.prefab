@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 5312770664226608371}
   m_Layer: 0
   m_Name: Character_Warrior_Brown
-  m_TagString: WarriorBrown
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
