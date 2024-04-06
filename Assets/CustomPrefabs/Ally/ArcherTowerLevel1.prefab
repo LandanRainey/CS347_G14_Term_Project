@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2446117115415327029}
-  - component: {fileID: 6575764720959058041}
   - component: {fileID: -746218241370455153}
   m_Layer: 6
   m_Name: ArcherTowerLevel1
@@ -33,25 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6575764720959058041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2446117115415327028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c5bba01f098fe41a55b44d8d19c882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  range: 10
-  damage: 2
-  fireRate: 1
-  enemiesInRange: []
-  cannonBall: {fileID: 0}
-  projectileSpeed: 10
 --- !u!114 &-746218241370455153
 MonoBehaviour:
   m_ObjectHideFlags: 0
