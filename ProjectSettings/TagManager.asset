@@ -12,14 +12,16 @@ TagManager:
   - ArcherTowerLevel1
   - ArcherTowerLevel2
   - ArcherTowerLevel3
+  - Path
+  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Projectile
   - Water
   - UI
-  - 
+  - Ally
   - 
   - 
   - 

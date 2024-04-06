@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 1148177001934212099}
   m_Layer: 0
   m_Name: Character_Warrior_White
-  m_TagString: WarriorWhite
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
