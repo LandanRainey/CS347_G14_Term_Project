@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
             {
                 agent.SetDestination(hitInfo.point);
             }
+        }
         // Micah's destroy when out of health       
         if (health <= 0)
         {
