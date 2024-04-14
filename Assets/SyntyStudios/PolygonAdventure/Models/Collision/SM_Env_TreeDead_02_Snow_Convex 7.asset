@@ -6,7 +6,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 20
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -334,7 +334,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 17
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -826,7 +826,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 22
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1154,7 +1154,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 19
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3122,7 +3122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 18
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3614,7 +3614,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Generated convex submesh 21
+  m_Name: SM_Env_TreeDead_02_Snow_Convex 7
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
