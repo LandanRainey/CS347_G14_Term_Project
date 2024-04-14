@@ -7,11 +7,11 @@ public class Ally : MonoBehaviour
     [Header("Inscribed")]
     public int level = 1;
     public float range = 10f; // placeholder, what are the units?
-    public float damage = 2f; // placeholder, what are the units?
+    public float damage = 50f; // placeholder, what are the units?
     public float fireRate = 1f; // placeholder, units per second?
     public List<Enemy> enemiesInRange; // This should be populated by the parent object
     public GameObject cannonBall; // placeholder for the projectile prefab
-    public float projectileSpeed = 10f; // You can adjust this value as needed
+    public float projectileSpeed = 100f; // You can adjust this value as needed
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +28,16 @@ public class Ally : MonoBehaviour
             //if there are enemies in range\
             if (enemiesInRange.Count > 0)
             {
+                //get the position to instantiate the projectile
+                Vector3 spawnPosition = transform.GetChild(0).position;
+
+                spawnPosition.y += transform.position.y; // adjust the y position to be at the top of the ally
+
                 // Instantiate a new projectile
-                GameObject projectile = Instantiate(cannonBall, transform.GetChild(0).position, Quaternion.identity);
+                GameObject projectile = Instantiate(cannonBall, spawnPosition, Quaternion.identity);
 
                 // Get the direction to the enemy
-                Vector3 direction = enemiesInRange[0].transform.position - transform.GetChild(0).position;
+                Vector3 direction = enemiesInRange[0].transform.position - spawnPosition;
 
                 // Launch the projectile towards the enemy
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
