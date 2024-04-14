@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   range: 10
-  damage: 20
+  damage: 50
   fireRate: 1
   enemiesInRange: []
   cannonBall: {fileID: 9200021226150520812, guid: e5b2fd40fb53ca8429ae237a04661d24, type: 3}
