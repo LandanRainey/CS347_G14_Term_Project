@@ -16,10 +16,17 @@ public class Enemy : MonoBehaviour
     //display the enemy's health
     public Text healthText;
 
+    public TowerDefense towerDefense;
+    public GameObject goalNode;
+
     // Start is called before the first frame update
     void Start()
     {
         //healthText = GameObject.Find("HealthText").GetComponent<Text>();
+        towerDefense = GameObject.Find("TowerDefense").GetComponent<TowerDefense>();
+
+        goalNode = GameObject.Find("GoalNode");
+        agent.SetDestination(goalNode.transform.position);
     }
 
     // Update is called once per frame
@@ -37,7 +44,24 @@ public class Enemy : MonoBehaviour
         // Micah's destroy when out of health       
         if (health <= 0)
         {
+            towerDefense.IncreaseMoney(moneyOnKill);
             Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter(Collider coll) 
+    {
+        GameObject collidedWith = coll.gameObject;
+
+        if (collidedWith != null && collidedWith.name == "GoalNode")
+        {
+            Debug.Log("Target object found!");
+            towerDefense.TakeDamage(healthLostOnExit);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Collider error");
         }
     }
 }
