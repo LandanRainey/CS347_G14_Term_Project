@@ -9,17 +9,19 @@ public class TowerDefense : MonoBehaviour
 {
     [Header("Inscribed")]
     public int currentRound = 1;
+    public int maxRounds = 3;
     public int currentMoney = 1000;
     public int currentHealth = 100;
 
     public Image healthBar;
-    public TextMeshProUGUI  uiText;
+    public TextMeshProUGUI  uiMoneyValue;
+    public TextMeshProUGUI  uiRoundValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Script to find healthBar? Would only be necessary in prefab, think we're good?
-        // Also can't be bothered to figure out how to find money lol
+        uiMoneyValue.text = currentMoney.ToString("#,0");
+        uiRoundValue.text = $"Round | {currentRound}/{maxRounds}";
     }
 
     // Update is called once per frame
@@ -37,12 +39,12 @@ public class TowerDefense : MonoBehaviour
     public void IncreaseMoney(int money)
     {
         currentMoney += money;
-        uiText.text = currentMoney.ToString("#,0");
+        uiMoneyValue.text = currentMoney.ToString("#,0");
     }
 
     public void DecreaseMoney(int money)
     {
         currentMoney -= money;
-        uiText.text = currentMoney.ToString("#,0");
+        uiMoneyValue.text = currentMoney.ToString("#,0");
     }
 }
