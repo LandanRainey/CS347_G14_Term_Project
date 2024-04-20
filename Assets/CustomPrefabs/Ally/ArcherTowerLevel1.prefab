@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Primitive_Helix_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1287083360417598, guid: 3a0bdc51b03761a4ebbd09ceda5d2d1f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4660434758299748, guid: 3a0bdc51b03761a4ebbd09ceda5d2d1f, type: 3}
       propertyPath: m_RootOrder
       value: 2
