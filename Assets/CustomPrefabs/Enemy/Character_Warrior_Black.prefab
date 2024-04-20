@@ -93,6 +93,7 @@ MonoBehaviour:
   distanceTravelled: 0
   healthText: {fileID: 0}
   towerDefense: {fileID: 0}
+  goalNode: {fileID: 0}
 --- !u!195 &6082322762934729932
 NavMeshAgent:
   m_ObjectHideFlags: 0

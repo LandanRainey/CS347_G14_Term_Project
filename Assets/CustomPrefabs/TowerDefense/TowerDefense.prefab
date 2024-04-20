@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3912984355093553084}
+  - component: {fileID: 109446849}
   m_Layer: 0
   m_Name: TowerDefense
   m_TagString: Untagged
@@ -30,3 +31,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109446849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929257938908409370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e37642e2ee7c6429268a53df9a09d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRound: 1
+  maxRounds: 3
+  currentMoney: 1000
+  currentHealth: 100
+  healthBar: {fileID: 0}
+  uiMoneyValue: {fileID: 0}
+  uiRoundValue: {fileID: 0}
+  enemyTierOne: {fileID: 348891048408049247, guid: a355c79fb0e5ac74a8b493d8f8a50a01, type: 3}
+  enemyTierTwo: {fileID: 0}
+  enemyTierThree: {fileID: 0}
