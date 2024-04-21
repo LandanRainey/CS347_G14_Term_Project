@@ -1542,6 +1542,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1679062713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6814877536223114270, guid: b8f34b0bd05d30446a1db03628bb4b2e, type: 3}
+  m_PrefabInstance: {fileID: 1940076316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1738028908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1711,6 +1716,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4306447093899978553, guid: 4f635074f086d8743b084f2ca1e5062d, type: 3}
+      propertyPath: gameWinUI
+      value: 
+      objectReference: {fileID: 1679062713}
     - target: {fileID: 4306447093899978553, guid: 4f635074f086d8743b084f2ca1e5062d, type: 3}
       propertyPath: gameOverUI
       value: 
@@ -2266,6 +2275,10 @@ PrefabInstance:
     - target: {fileID: 1473767155951143015, guid: b8f34b0bd05d30446a1db03628bb4b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: mainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814877536223114270, guid: b8f34b0bd05d30446a1db03628bb4b2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8f34b0bd05d30446a1db03628bb4b2e, type: 3}
