@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
+using UnityEditor; 
 
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI; 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject gameWinUI;
+    public TowerDefense round; 
 
-    // Update is called once per frame
-    void Update()
+    public GameObject tower1;
+    public GameObject tower2;
+
+    public void gameWin()
     {
-        
+        if(round.currentRound == round.maxRounds)
+        {
+            gameWinUI.SetActive(true);
+        }
     }
 
     public void gameOver()
@@ -37,4 +40,19 @@ public class GameManagerScript : MonoBehaviour
     {
         Application.Quit(); 
     }
+
+    ///// UPGRADE & SELL BUTTON TRIAL //////
+
+    /*public GameObject other; 
+    public void hellIfIKnow()
+    {
+        replace(tower1,tower2); 
+    }
+
+    public void replace(GameObject obj1, GameObject obj2)
+    {
+        Instantiate(obj2, obj1.transform.position, Quaternion.identity);
+        DestroyImmediate(other,true);
+    }*/
+
 }
