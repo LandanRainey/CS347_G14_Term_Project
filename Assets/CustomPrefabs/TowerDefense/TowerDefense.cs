@@ -95,6 +95,9 @@ public class TowerDefense : MonoBehaviour
             SpawnPresetEnemy(); // Call the function to spawn the preset enemy
         }
 
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        numEnemiesAlive = enemies.Length;
+
         if (allEnemiesSpawned && numEnemiesAlive == 0)
         {
             roundActiveBool = false;
@@ -131,7 +134,9 @@ public class TowerDefense : MonoBehaviour
         {
             roundActiveBool = false;
         }
+
         // Make sure a round is not currently active
+        Debug.Log($"roundActiveBool: {roundActiveBool}, allEnemiesSpawned: {allEnemiesSpawned}");
         if (!roundActiveBool && allEnemiesSpawned)
         {
             // If not, then mark a round is active
@@ -143,14 +148,6 @@ public class TowerDefense : MonoBehaviour
             // Update round display
             uiRoundValue.text = $"Round | {currentRound}/{maxRounds}";
             
-            //testing
-            Debug.Log("Printing wave contents:");
-            foreach (var data in waves[currentRound - 1])
-            {
-                Debug.Log($"Enemy Prefab: {data.enemyPrefab.name}, Delay: {data.delay}");
-            }
-
-             Debug.Log("In SpawnSpecificWave");
             foreach (var data in waves[currentRound - 1])
                 {
                     yield return new WaitForSecondsRealtime(data.delay);
@@ -158,8 +155,6 @@ public class TowerDefense : MonoBehaviour
                 }
 
             allEnemiesSpawned = true;
-
-            Debug.Log("after SpawnSpecificWave(waves[currentRound - 1]);");
         }
     }
 
