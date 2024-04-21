@@ -32,8 +32,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Coop's simple click to move (not saying I made it, I got it from a video and put it here for testing)
+        // Coop's simple click to move
         if(Input.GetMouseButtonDown(1))
         {
             Ray movePosition = Camera.main.ScreenPointToRay(Input.mousePosition);

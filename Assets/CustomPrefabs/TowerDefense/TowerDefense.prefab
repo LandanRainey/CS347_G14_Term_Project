@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e37642e2ee7c6429268a53df9a09d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRound: 0
+  currentRound: 1
   maxRounds: 3
   currentMoney: 1000
   currentHealth: 100

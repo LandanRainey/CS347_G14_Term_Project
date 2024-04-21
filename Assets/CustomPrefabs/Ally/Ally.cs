@@ -94,4 +94,9 @@ public class Ally : MonoBehaviour
     
     
     }
+
+    void OnMouseDown()
+    {
+        Debug.Log("Clicked on: " + gameObject.GetInstanceID());
+    }
 }
