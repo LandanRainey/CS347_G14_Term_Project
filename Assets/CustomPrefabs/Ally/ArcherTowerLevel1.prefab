@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  range: 10
+  range: 16
   damage: 50
   fireRate: 1
   enemiesInRange: []
