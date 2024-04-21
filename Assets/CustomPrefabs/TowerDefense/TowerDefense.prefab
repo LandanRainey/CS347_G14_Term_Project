@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e37642e2ee7c6429268a53df9a09d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRound: 0
+  currentRound: 1
   maxRounds: 3
   currentMoney: 1000
   currentHealth: 100
@@ -53,4 +53,3 @@ MonoBehaviour:
   enemyTierOne: {fileID: 348891048408049247, guid: a355c79fb0e5ac74a8b493d8f8a50a01, type: 3}
   enemyTierTwo: {fileID: 0}
   enemyTierThree: {fileID: 0}
-  numEnemiesAlive: 0

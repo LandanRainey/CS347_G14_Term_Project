@@ -39,52 +39,15 @@ public class TowerDefense : MonoBehaviour
     List<List<EnemySpawnData>> waves = new List<List<EnemySpawnData>>();
 
     private bool roundActiveBool = false;
-    private bool allEnemiesSpawned = true;
+    private bool allEnemiesSpawned = false;
     public int numEnemiesAlive = 0;
-
-    private float startTime;
 
     // Start is called before the first frame update
     void Start()
     {
         uiMoneyValue.text = currentMoney.ToString("#,0");
-        
+        uiRoundValue.text = $"Round | {currentRound}/{maxRounds}";
         startNode = GameObject.Find("StartNode").GetComponent<StartNode>();
-
-        List<EnemySpawnData> waveOne = new List<EnemySpawnData>();
-        for (int a = 0; a < 30; a++)
-        {
-            // Creating new EnemySpawnData with enemyTierOne and delay 0.5
-            waveOne.Add(new EnemySpawnData(enemyTierOne, 0.5f));
-        }
-        List<EnemySpawnData> waveTwo = new List<EnemySpawnData>();
-        for (int b = 0; b < 5; b++)
-        {
-            for (int c = 0; c < 4; c++)
-            {
-                waveTwo.Add(new EnemySpawnData(enemyTierOne, 0.4f));
-            }
-            waveTwo.Add(new EnemySpawnData(enemyTierTwo, 0.5f));
-        }
-
-        List<EnemySpawnData> waveThree = new List<EnemySpawnData>();
-        for (int d = 0; d < 7; d++)
-        {
-            for (int e = 0; e < 5; e++)
-            {
-                waveThree.Add(new EnemySpawnData(enemyTierOne, 0.3f));
-            }
-            waveThree.Add(new EnemySpawnData(enemyTierTwo, 0.5f));
-            waveThree.Add(new EnemySpawnData(enemyTierThree, 0.1f));
-        }
-
-        waves.Add(waveOne);
-        waves.Add(waveTwo);
-        waves.Add(waveThree);
-
-        uiRoundValue.text = $"Round | {currentRound}/{waves.Count}";
-
-        
     }
 
     // Update is called once per frame
@@ -119,20 +82,10 @@ public class TowerDefense : MonoBehaviour
         uiMoneyValue.text = currentMoney.ToString("#,0");
     }
 
-    public void Button_SpawnWave()
+    public void SpawnWave()
     {
-        StartCoroutine(SpawnWave());
-    }
-
-    IEnumerator SpawnWave()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (enemies.Length == 0)
-        {
-            roundActiveBool = false;
-        }
         // Make sure a round is not currently active
-        if (!roundActiveBool && allEnemiesSpawned)
+        if (!roundActiveBool)
         {
             // If not, then mark a round is active
             roundActiveBool = true;
@@ -143,29 +96,19 @@ public class TowerDefense : MonoBehaviour
             // Update round display
             uiRoundValue.text = $"Round | {currentRound}/{maxRounds}";
             
-            //testing
-            Debug.Log("Printing wave contents:");
-            foreach (var data in waves[currentRound - 1])
-            {
-                Debug.Log($"Enemy Prefab: {data.enemyPrefab.name}, Delay: {data.delay}");
-            }
-
-             Debug.Log("In SpawnSpecificWave");
-            foreach (var data in waves[currentRound - 1])
-                {
-                    yield return new WaitForSecondsRealtime(data.delay);
-                    startNode.Spawn(data.enemyPrefab);
-                }
-
-            allEnemiesSpawned = true;
-
-            Debug.Log("after SpawnSpecificWave(waves[currentRound - 1]);");
+            SpawnSpecificWave(waves[currentRound - 1]);
         }
     }
 
-    private void SpawnSpecificWave(List<EnemySpawnData> WaveData)
+    private IEnumerator SpawnSpecificWave(List<EnemySpawnData> WaveData)
     {
-       
+        foreach (var data in wave)
+            {
+                yield return new WaitForSeconds(data.delay);
+                startNode.Spawn(data.enemyPrefab);
+            }
+
+        allEnemiesSpawned = true;
     }
 
     public void SpawnPresetEnemy()
