@@ -53,6 +53,7 @@ MonoBehaviour:
   fireRate: 1
   enemiesInRange: []
   cannonBall: {fileID: 9200021226150520812, guid: e5b2fd40fb53ca8429ae237a04661d24, type: 3}
+  shootingSound: {fileID: 5424600640081960812, guid: e245b53cfe40385479e4d3434d31be35, type: 3}
   projectileSpeed: 100
 --- !u!1 &6408676425380675304
 GameObject:

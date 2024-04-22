@@ -11,6 +11,7 @@ public class Ally : MonoBehaviour
     public float fireRate = 1f; // placeholder, units per second?
     public List<Enemy> enemiesInRange; // This should be populated by the parent object
     public GameObject cannonBall; // placeholder for the projectile prefab
+    public GameObject ShootingSound; // placeholder for the shooting SFX
     public float projectileSpeed = 100f; // You can adjust this value as needed
 
     // Start is called before the first frame update
@@ -41,6 +42,9 @@ public class Ally : MonoBehaviour
 
                 // Launch the projectile towards the enemy
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+
+				//Play SFX
+				//ShootingSound.PlayMusic();
 
                 // set the enemy health to 0
                 enemiesInRange[0].health -= damage;
