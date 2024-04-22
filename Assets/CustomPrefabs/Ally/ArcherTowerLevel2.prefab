@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c5bba01f098fe41a55b44d8d19c882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  range: 10
-  damage: 2
+  level: 2
+  range: 19
+  damage: 75
   fireRate: 1
   enemiesInRange: []
   cannonBall: {fileID: 9200021226150520812, guid: e5b2fd40fb53ca8429ae237a04661d24, type: 3}
@@ -698,8 +698,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1787548, y: 9.159827, z: 3.082975}
-  m_Center: {x: 0, y: 4.5799136, z: -0.0000006556511}
+  m_Size: {x: 3.1787548, y: 6.3, z: 3.082975}
+  m_Center: {x: 0, y: 3.2, z: -0.0000006556511}
 --- !u!114 &5144501622141345611
 MonoBehaviour:
   m_ObjectHideFlags: 0

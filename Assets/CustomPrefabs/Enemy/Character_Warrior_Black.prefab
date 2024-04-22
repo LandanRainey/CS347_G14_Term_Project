@@ -75,7 +75,7 @@ MonoBehaviour:
   health: 100
   speed: 5
   moneyOnKill: 10
-  healthLostOnExit: 1
+  healthLostOnExit: 5
   agent: {fileID: 6082322762934729932}
   distanceTravelled: 0
   healthText: {fileID: 0}
