@@ -5,28 +5,22 @@ using UnityEngine;
 public class Ally : MonoBehaviour
 {
     [Header("Inscribed")]
-    
+    public int level = 1;
     public float range = 10f; // placeholder, what are the units?
     public float damage = 50f; // placeholder, what are the units?
     public float fireRate = 1f; // placeholder, units per second?
     public List<Enemy> enemiesInRange; // This should be populated by the parent object
     public GameObject cannonBall; // placeholder for the projectile prefab
-    public GameObject ShootingSound; // placeholder for the shooting SFX
+    //public GameObject ShootingSound; // placeholder for the shooting SFX
     public float projectileSpeed = 100f; // You can adjust this value as needed
-
-    public GameObject objectOnUpgrade;
-    public int upgradeCost;
-    public int sellCost;
-
-    public TowerDefense towerDefense;
+	public AudioSource audioSource;
+	public AudioClip shootingAudioClip;
 
     // Start is called before the first frame update
     void Start()
     {
         // Start the Attack coroutine
         StartCoroutine(Attack());
-
-        towerDefense = GameObject.Find("TowerDefense").GetComponent<TowerDefense>();
     }
 
     IEnumerator Attack()
@@ -34,13 +28,13 @@ public class Ally : MonoBehaviour
         // loop forever
         while (true)
         {
-            //if there are enemies in range
+            //if there are enemies in range\
             if (enemiesInRange.Count > 0)
             {
                 //get the position to instantiate the projectile
                 Vector3 spawnPosition = transform.GetChild(0).position;
 
-                spawnPosition.y += 5; // adjust the y position to be at the top of the ally
+                spawnPosition.y += transform.position.y; // adjust the y position to be at the top of the ally
 
                 // Instantiate a new projectile
                 GameObject projectile = Instantiate(cannonBall, spawnPosition, Quaternion.identity);
@@ -48,11 +42,12 @@ public class Ally : MonoBehaviour
                 // Get the direction to the enemy
                 Vector3 direction = enemiesInRange[0].transform.position - spawnPosition;
 
+
                 // Launch the projectile towards the enemy
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
 
 				//Play SFX
-				//ShootingSound.PlayMusic();
+				audioSource.PlayOneShot(shootingAudioClip);
 
                 // set the enemy health to 0
                 enemiesInRange[0].health -= damage;
@@ -86,7 +81,6 @@ public class Ally : MonoBehaviour
         }
     }
     
-    /*
     // Sort the enemies in range based on their health
     enemiesInRange.Sort((a, b) => b.distanceTravelled.CompareTo(a.distanceTravelled));
 
@@ -104,34 +98,12 @@ public class Ally : MonoBehaviour
         childTransform.localRotation = Quaternion.Slerp(childTransform.localRotation, rotationToLookAtEnemy, 0.1f);
 
     }
-    */
+    
     
     }
 
     void OnMouseDown()
     {
         Debug.Log("Clicked on: " + gameObject.GetInstanceID());
-    }
-
-    public void UpgradeTower()
-    {
-        if (towerDefense.currentMoney >= upgradeCost)
-        {
-            Vector3 position = transform.position;
-            Quaternion rotation = transform.rotation;
-
-            towerDefense.DecreaseMoney(upgradeCost);
-
-            Instantiate(objectOnUpgrade, position, rotation);
-
-            Destroy(gameObject);
-        }
-        
-    }
-
-    public void SellTower()
-    {
-        towerDefense.IncreaseMoney(sellCost);
-        Destroy(gameObject);
     }
 }
