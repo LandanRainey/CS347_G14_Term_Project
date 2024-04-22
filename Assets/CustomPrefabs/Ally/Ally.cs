@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ally : MonoBehaviour
 {
     [Header("Inscribed")]
-    public int level = 1;
+    
     public float range = 10f; // placeholder, what are the units?
     public float damage = 50f; // placeholder, what are the units?
     public float fireRate = 1f; // placeholder, units per second?
@@ -16,11 +16,20 @@ public class Ally : MonoBehaviour
 	public AudioSource audioSource;
 	public AudioClip shootingAudioClip;
 
+    public GameObject objectOnUpgrade;
+    public int upgradeCost;
+    public int sellCost;
+
+    public TowerDefense towerDefense;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // Start the Attack coroutine
         StartCoroutine(Attack());
+
+        towerDefense = GameObject.Find("TowerDefense").GetComponent<TowerDefense>();
     }
 
     IEnumerator Attack()
@@ -28,13 +37,13 @@ public class Ally : MonoBehaviour
         // loop forever
         while (true)
         {
-            //if there are enemies in range\
+            //if there are enemies in range
             if (enemiesInRange.Count > 0)
             {
                 //get the position to instantiate the projectile
                 Vector3 spawnPosition = transform.GetChild(0).position;
 
-                spawnPosition.y += transform.position.y; // adjust the y position to be at the top of the ally
+                spawnPosition.y += 5; // adjust the y position to be at the top of the ally
 
                 // Instantiate a new projectile
                 GameObject projectile = Instantiate(cannonBall, spawnPosition, Quaternion.identity);
@@ -105,5 +114,27 @@ public class Ally : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("Clicked on: " + gameObject.GetInstanceID());
+    }
+
+    public void UpgradeTower()
+    {
+        if (towerDefense.currentMoney >= upgradeCost)
+        {
+            Vector3 position = transform.position;
+            Quaternion rotation = transform.rotation;
+
+            towerDefense.DecreaseMoney(upgradeCost);
+
+            Instantiate(objectOnUpgrade, position, rotation);
+
+            Destroy(gameObject);
+        }
+        
+    }
+
+    public void SellTower()
+    {
+        towerDefense.IncreaseMoney(sellCost);
+        Destroy(gameObject);
     }
 }
