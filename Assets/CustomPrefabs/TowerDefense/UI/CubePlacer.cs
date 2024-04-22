@@ -11,33 +11,38 @@ public class CubePlacer : MonoBehaviour
     private GameObject ghostCube; // The ghost cube
     private bool isPlacing = false; // Whether we're currently placing a cube
 
-void Update()
-{       
-        if(ghostCube != null){
+    public TowerDefense towerDefense;
+
+    void Update()
+    {       
+        if(ghostCube != null)
+        {
             MoveGhostCubeToMouse();
         }
 
-
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+        if (isPlacing)
             {
-            if (isPlacing)
-                {
-                    PlaceRealCube();
-                }
+                PlaceRealCube();
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                isPlacing = false;
-                Destroy(ghostCube);
-                ghostCube = null;
-            }
-        
-}
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPlacing = false;
+            Destroy(ghostCube);
+            ghostCube = null;
+        }    
+    }
 
     public void StartPlacingCube()
     {
-        isPlacing = true;
-        ghostCube = Instantiate(ghostCubePrefab);
+        //Debug.Log($"Current Money: {towerDefense.currentMoney}");
+        if(towerDefense.currentMoney >= 100)
+        {
+            isPlacing = true;
+            ghostCube = Instantiate(ghostCubePrefab);
+        }
     }
 
     private void MoveGhostCubeToMouse()
@@ -46,7 +51,7 @@ void Update()
         RaycastHit hit;
         if (Physics.Raycast(ghostCube.transform.position, Vector3.down, out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Path"))
+                if (hit.collider.gameObject.CompareTag("Path") || hit.collider.gameObject.CompareTag("Ally"))
                 {
                     isPlacing = false;
                     ghostCube.GetComponent<Renderer>().material = cantPlaceMaterial;
@@ -67,18 +72,19 @@ void Update()
 
     private void PlaceRealCube()
     {
+        towerDefense.DecreaseMoney(100);
         isPlacing = false;
         Vector3 newPosition = ghostCube.transform.position;
 
-        Debug.Log("Placing cube at " + newPosition);
+        //Debug.Log("Placing cube at " + newPosition);
     
         // GameObject tempCube = Instantiate(realCubePrefab, newPosition, Quaternion.identity);
         // float cubeHeight = tempCube.transform.GetChild(0).GetComponent<Collider>().bounds.size.y;
         // Destroy(tempCube);
     
-        newPosition.x += 2.55f;
-        newPosition.y += 4.5f;
-        newPosition.z += 1.025f;
+        //newPosition.x += 2.55f;
+        //newPosition.y += 4.5f;
+        //newPosition.z += 1.025f;
         Instantiate(realCubePrefab, newPosition, Quaternion.identity);
         Destroy(ghostCube);
         ghostCube = null;
