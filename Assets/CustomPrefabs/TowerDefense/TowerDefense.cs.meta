@@ -3,7 +3,13 @@ guid: 17e37642e2ee7c6429268a53df9a09d0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthBar: {instanceID: 0}
+  - uiMoneyValue: {instanceID: 0}
+  - uiRoundValue: {instanceID: 0}
+  - enemyTierOne: {fileID: 348891048408049247, guid: a355c79fb0e5ac74a8b493d8f8a50a01, type: 3}
+  - enemyTierTwo: {fileID: 4354636506512914879, guid: 38efe895e450b8e4dba33707e5378f0b, type: 3}
+  - enemyTierThree: {fileID: 1148177001926834397, guid: fd87361d7995f8644b15ebb9044dbee1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

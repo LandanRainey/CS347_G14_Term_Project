@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     public Image healthBar;
     public float healthAmount = 100f;
 
-    public GameManagerScript gameManager; 
+    public TowerDefense towerDefense; 
  
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class HealthManager : MonoBehaviour
         if (healthAmount <= 0 )
         {
             //SceneManager.LoadScene("SampleScene");
-            gameManager.gameOver();
+            towerDefense.gameOver();
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
