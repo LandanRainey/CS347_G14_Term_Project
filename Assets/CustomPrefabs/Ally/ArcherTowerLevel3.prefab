@@ -52,7 +52,7 @@ MonoBehaviour:
   damage: 100
   fireRate: 1.2
   enemiesInRange: []
-  cannonBall: {fileID: 9200021226150520812, guid: e5b2fd40fb53ca8429ae237a04661d24, type: 3}
+  cannonBall: {fileID: 7161245509046669675, guid: e9755a5a0d81e5d4f9af1aa3062872f1, type: 3}
   projectileSpeed: 100
   audioSource: {fileID: 4290386678323744635}
   shootingAudioClip: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
