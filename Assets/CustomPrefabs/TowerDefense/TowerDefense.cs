@@ -28,6 +28,7 @@ public class TowerDefense : MonoBehaviour
     public Image healthBar;
     public TextMeshProUGUI  uiMoneyValue;
     public TextMeshProUGUI  uiRoundValue;
+    public TextMeshProUGUI  gameOverRounds;
 
     public GameObject enemyTierOne;
     public GameObject enemyTierTwo;
@@ -167,7 +168,8 @@ public class TowerDefense : MonoBehaviour
             // Increment round counter
             currentRound++;
             // Update round display
-            uiRoundValue.text = $"Round | {currentRound}/{maxRounds}";
+            uiRoundValue.text = $"Round {currentRound}/{maxRounds}";
+            gameOverRounds.text = $"Round | {currentRound-1}/{maxRounds}";
             
             foreach (var data in waves[currentRound - 1])
                 {
