@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
 
     public TowerDefense towerDefense;
     public GameObject goalNode;
+	public AudioSource audioSource;
+	public AudioClip shootingAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +43,12 @@ public class Enemy : MonoBehaviour
                 agent.SetDestination(hitInfo.point);
             }
         }
+		
         // Micah's destroy when out of health       
         if (health <= 0)
         {
+			//Play death SFX
+			audioSource.PlayOneShot(shootingAudioClip);
             towerDefense.IncreaseMoney(moneyOnKill);
             Destroy(gameObject);
         }
