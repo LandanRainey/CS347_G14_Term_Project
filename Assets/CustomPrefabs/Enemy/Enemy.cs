@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 
         if (collidedWith != null && collidedWith.name == "GoalNode")
         {
-            Debug.Log("Target object found!");
+            //Debug.Log("Target object found!");
             towerDefense.TakeDamage(healthLostOnExit);
             Destroy(gameObject);
         }
