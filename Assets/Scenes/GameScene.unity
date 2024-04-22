@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: uiRoundValue
       value: 
       objectReference: {fileID: 1940076317}
+    - target: {fileID: 109446849, guid: 012962dc22322794fb3ce450bde2d32e, type: 3}
+      propertyPath: gameOverRounds
+      value: 
+      objectReference: {fileID: 1270457424}
     - target: {fileID: 3912984355093553084, guid: 012962dc22322794fb3ce450bde2d32e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1579,6 +1583,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 497450, guid: c87a99b4c24b9ce48bac40727eb1ecb6, type: 3}
   m_PrefabInstance: {fileID: 1199118424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1270457424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5368257534732618998, guid: b8f34b0bd05d30446a1db03628bb4b2e, type: 3}
+  m_PrefabInstance: {fileID: 1940076316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1320668360
 PrefabInstance:
   m_ObjectHideFlags: 0
