@@ -1715,10 +1715,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63343161801c1464e82ce07205c2ea63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 500
   speed: 5
-  moneyOnKill: 10
-  healthLostOnExit: 1
+  moneyOnKill: 50
+  healthLostOnExit: 20
   agent: {fileID: 2438722839521601677}
   distanceTravelled: 0
   healthText: {fileID: 0}

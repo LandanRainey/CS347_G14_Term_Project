@@ -42,7 +42,8 @@ public class TowerDefense : MonoBehaviour
     private bool allEnemiesSpawned = true;
     public int numEnemiesAlive = 0;
 
-    private float startTime;
+    public GameObject gameOverUI; 
+    public GameObject gameWinUI;
 
     // Start is called before the first frame update
     void Start()
@@ -98,10 +99,30 @@ public class TowerDefense : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         numEnemiesAlive = enemies.Length;
 
+        if (currentHealth <= 0)
+        {
+            gameOver();
+        }
+
         if (allEnemiesSpawned && numEnemiesAlive == 0)
         {
             roundActiveBool = false;
         }
+
+        if (allEnemiesSpawned && !roundActiveBool && currentRound == maxRounds)
+        {
+            gameWin();
+        }
+    }
+
+    public void gameWin()
+    {
+        gameWinUI.SetActive(true);
+    }
+
+    public void gameOver()
+    {
+        gameOverUI.SetActive(true); 
     }
 
     public void TakeDamage(int damage)
