@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c5bba01f098fe41a55b44d8d19c882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   range: 16
   damage: 50
   fireRate: 1
@@ -55,6 +54,10 @@ MonoBehaviour:
   projectileSpeed: 100
   audioSource: {fileID: -4549906995390165525}
   shootingAudioClip: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
+  objectOnUpgrade: {fileID: 1038538777013713482, guid: a6cc5e606c6ead74bbd8d2bc4bc81e61, type: 3}
+  upgradeCost: 200
+  sellCost: 70
+  towerDefense: {fileID: 0}
 --- !u!82 &-4549906995390165525
 AudioSource:
   m_ObjectHideFlags: 0
@@ -165,6 +168,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: a4cb7f4997366e447aa09e2d2384a609, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a4cb7f4997366e447aa09e2d2384a609, type: 3}
+      propertyPath: m_TagString
+      value: Ally
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a4cb7f4997366e447aa09e2d2384a609, type: 3}
       propertyPath: m_RootOrder

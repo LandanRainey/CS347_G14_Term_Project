@@ -47,28 +47,31 @@ public class CubePlacer : MonoBehaviour
 
     private void MoveGhostCubeToMouse()
     {
+        // We need to make the ray be at the same angle as the camera, so that we can't place on other towers
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ghostCube.transform.position, Vector3.down, out hit))
-            {
-                if (hit.collider.gameObject.CompareTag("Path") || hit.collider.gameObject.CompareTag("Ally"))
-                {
-                    isPlacing = false;
-                    ghostCube.GetComponent<Renderer>().material = cantPlaceMaterial;
-                }
-                else
-                {
-                    isPlacing = true;
-                    ghostCube.GetComponent<Renderer>().material = placeMaterial;
-                }
-            }
+
         if (Physics.Raycast(ray, out hit))
         {
+            // Check if the ray hits something
             Vector3 newPosition = hit.point;
             newPosition.y += ghostCube.transform.localScale.y / 2;
             ghostCube.transform.position = newPosition;
+
+            // If the ray doesn't intersect with ground, you can't place
+            if (!hit.collider.gameObject.CompareTag("Ground"))
+            {
+                isPlacing = false;
+                ghostCube.GetComponent<Renderer>().material = cantPlaceMaterial;
+            }
+            else // else, you can place
+            {
+                isPlacing = true;
+                ghostCube.GetComponent<Renderer>().material = placeMaterial;
+            }
         }
     }
+
 
     private void PlaceRealCube()
     {
