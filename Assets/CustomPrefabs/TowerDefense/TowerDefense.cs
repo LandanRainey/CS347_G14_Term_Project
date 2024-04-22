@@ -157,7 +157,7 @@ public class TowerDefense : MonoBehaviour
         }
 
         // Make sure a round is not currently active
-        Debug.Log($"roundActiveBool: {roundActiveBool}, allEnemiesSpawned: {allEnemiesSpawned}");
+        //Debug.Log($"roundActiveBool: {roundActiveBool}, allEnemiesSpawned: {allEnemiesSpawned}");
         if (!roundActiveBool && allEnemiesSpawned)
         {
             // If not, then mark a round is active
